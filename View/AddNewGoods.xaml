@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sclad"
         mc:Ignorable="d"
-        Title="Добавить наименование" Height="300" Width="300">
+        Title="Добавить наименование" Height="300" Width="300" Name="AddNewGoods">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -16,8 +16,9 @@
                     VerticalAlignment="Center"
                     Width="200">
             <TextBlock Text="Наименование"/>
-            <TextBox Text=""/>
+            <TextBox Name="TitleBlock" Text="{Binding GoodsTitle}"/>
         </StackPanel>
-        <Button Grid.Row="1" Content="Добавить"/>
+        <Button Grid.Row="1" Content="Добавить" Command="{Binding AddNewGoods}" 
+                CommandParameter="{Binding ElementName=AddNewGoods}"/>
     </Grid>
 </Window>

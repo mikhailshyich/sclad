@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Sclad.ViewModel
 {
@@ -21,6 +23,30 @@ namespace Sclad.ViewModel
             {
                 allGoods = value;
                 NotifyPropertyChanged("AllGoods");
+            }
+        }
+
+        public string GoodsTitle { get; set; }
+
+        //команды добавления товаров
+        private RelayCommand addNewGoods;
+        public RelayCommand AddNewGoods
+        {
+            get
+            {
+                return addNewGoods ?? new RelayCommand(obj =>
+                {
+                    Window wnd = obj as Window;
+                    string resultStr = "";
+                    if(GoodsTitle == null || GoodsTitle.Replace(" ", "").Length == 0)
+                    {
+                        SetRedBlockControl(wnd, "TitleBlock");
+                    }
+                    else
+                    {
+                        resultStr = DataWorker.CreateGoods(GoodsTitle);
+                    }
+                });
             }
         }
 
@@ -50,6 +76,12 @@ namespace Sclad.ViewModel
             window.Owner = Application.Current.MainWindow;
             window.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             window.ShowDialog();
+        }
+
+        private void SetRedBlockControl(Window wnd, string blockName)
+        {
+            Control block = wnd.FindName(blockName) as Control;
+            block.BorderBrush = Brushes.Red;
         }
             
         public event PropertyChangedEventHandler PropertyChanged;
