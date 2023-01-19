@@ -3,12 +3,10 @@ using System.Windows.Input;
 
 namespace Sclad.Model
 {
-    internal class RelayCommand
+    public class RelayCommand: ICommand
     {
         private Action<object> _execute;
         private Func<object, bool> _canExecute;
-        private Action<object> value;
-
         public event EventHandler CanExecuteChanged
         {
             add { CommandManager.RequerySuggested += value; }
@@ -20,12 +18,6 @@ namespace Sclad.Model
             _execute = execute;
             _canExecute = canExecute;
         }
-
-        public RelayCommand(Action<object> value)
-        {
-            this.value = value;
-        }
-
         public bool CanExecute(object parameter)
         {
             return _canExecute == null || _canExecute(parameter);

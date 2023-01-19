@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Conventions;
-using Sclad.Model;
+﻿using Sclad.Model;
 using Sclad.View;
 using System;
 using System.Collections.Generic;
@@ -26,12 +25,16 @@ namespace Sclad.ViewModel
         }
 
         //команды открытия окон
-        private RelayCommand? openAddNewGoodsWnd;
+        private RelayCommand openAddNewGoodsWnd;
         public RelayCommand OpenAddNewGoodsWnd
         {
             get
             {
-                return openAddNewGoodsWnd ?? new RelayCommand(obj => { OpenAddGoodsWindowMethod(); });
+                return openAddNewGoodsWnd ?? new RelayCommand(obj =>
+                {
+                    OpenAddGoodsWindowMethod();
+                }
+                    );
             }
         }
 
