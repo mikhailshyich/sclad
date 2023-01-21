@@ -5,17 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sclad"
         mc:Ignorable="d"
-        Title="Справочник товары" Height="450" Width="800">
+        Title="Справочник товары" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <TabControl Grid.Row="1">
-            <TabItem Name="Goods">
-                <TabItem.Header>
-                    <TextBlock Text="Товары"/>
-                </TabItem.Header>
+        <TabControl Grid.Row="0">
+            <TabItem Name="Goods" Header="Справочник товары">
                 <ListView x:Name="ViewAllGoods" ItemsSource="{Binding AllGoods}">
                     <ListView.View>
                         <GridView>
@@ -25,9 +22,12 @@
                     </ListView.View>
                 </ListView>
             </TabItem>
+            <TabItem Header="Приход">
+                
+            </TabItem>
         </TabControl>
-        <StackPanel Grid.Row="0" Orientation="Horizontal"
-                    HorizontalAlignment="Left">
+        <StackPanel Grid.Row="1" Orientation="Horizontal"
+                    HorizontalAlignment="Left" Margin="1">
             <Button Content="Добавить товар" Command="{Binding OpenAddNewGoodsWnd}"/>
         </StackPanel>
     </Grid>
