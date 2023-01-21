@@ -1,5 +1,6 @@
 ﻿using Sclad.ViewModel;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Sclad.View
 {
@@ -8,10 +9,12 @@ namespace Sclad.View
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static ListView AllGoodsView;
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new DataManageVM(); 
+            DataContext = new DataManageVM();
+            AllGoodsView = ViewAllGoods;
         }
     }
 }

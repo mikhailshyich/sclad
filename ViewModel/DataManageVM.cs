@@ -26,6 +26,7 @@ namespace Sclad.ViewModel
             }
         }
 
+        //свойства для товаров
         public string GoodsTitle { get; set; }
 
         //команды добавления товаров
@@ -45,6 +46,10 @@ namespace Sclad.ViewModel
                     else
                     {
                         resultStr = DataWorker.CreateGoods(GoodsTitle);
+                        UpdateAllDataView();
+                        ShowMessageToUser(resultStr);
+                        SetNullValuesToPropertys();
+                        wnd.Close();
                     }
                 });
             }
@@ -83,7 +88,32 @@ namespace Sclad.ViewModel
             Control block = wnd.FindName(blockName) as Control;
             block.BorderBrush = Brushes.Red;
         }
-            
+
+        private void SetNullValuesToPropertys()
+        {
+            //для товаров
+            GoodsTitle = null;
+        }
+
+        private void UpdateAllDataView()
+        {
+            UpdateAllGoodsView();
+        }
+
+        private void UpdateAllGoodsView()
+        {
+            AllGoods = DataWorker.GetGoods();
+            MainWindow.AllGoodsView.ItemsSource = null;
+            MainWindow.AllGoodsView.Items.Clear();
+            MainWindow.AllGoodsView.ItemsSource = AllGoods;
+            MainWindow.AllGoodsView.Items.Refresh();
+        }
+        
+        private void ShowMessageToUser(string message)
+        {
+            MessageView messageView = new MessageView(message);
+            SetCenterPositionAndOpen(messageView);
+        }
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void NotifyPropertyChanged(String propertyTitle)

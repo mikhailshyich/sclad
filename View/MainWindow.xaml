@@ -16,10 +16,11 @@
                 <TabItem.Header>
                     <TextBlock Text="Товары"/>
                 </TabItem.Header>
-                <ListView ItemsSource="{Binding AllGoods}">
+                <ListView x:Name="ViewAllGoods" ItemsSource="{Binding AllGoods}">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Наименование"/>
+                            <GridViewColumn Header="Наименование"
+                                            DisplayMemberBinding="{Binding Path=Title}"/>
                         </GridView>
                     </ListView.View>
                 </ListView>
