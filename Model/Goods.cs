@@ -1,6 +1,4 @@
-﻿
-
-namespace Sclad.Model
+﻿namespace Sclad.Model
 {
     public class Goods
     {

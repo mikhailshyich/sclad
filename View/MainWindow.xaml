@@ -23,12 +23,32 @@
                     </ListView.View>
                 </ListView>
             </TabItem>
-            <TabItem Header="Приход">
-                
+            <TabItem Header="В наличии">
+                <ListView x:Name="Stock">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Наименование товара"/>
+                            <GridViewColumn Header="Количество"/>
+                            <GridViewColumn Header="Стоимость"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Header="Израсходовано">
+                <ListView x:Name="Used">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Дата и время"/>
+                            <GridViewColumn Header="Наименование товара"/>
+                            <GridViewColumn Header="Количество"/>
+                            <GridViewColumn Header="Стоимость"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
             </TabItem>
         </TabControl>
         <StackPanel Grid.Row="1" Orientation="Horizontal"
-                    HorizontalAlignment="Left" Margin="1">
+                    HorizontalAlignment="Right" Margin="1">
             <Button Content="Добавить товар" Command="{Binding OpenAddNewGoodsWnd}"/>
         </StackPanel>
     </Grid>
