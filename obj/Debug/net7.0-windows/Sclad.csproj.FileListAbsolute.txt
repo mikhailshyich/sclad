@@ -66,3 +66,7 @@ C:\Users\shiich\Desktop\projects\Sclad\bin\Debug\net7.0-windows\Humanizer.dll
 C:\Users\shiich\Desktop\projects\Sclad\bin\Debug\net7.0-windows\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\shiich\Desktop\projects\Sclad\bin\Debug\net7.0-windows\Microsoft.Extensions.DependencyModel.dll
 C:\Users\shiich\Desktop\projects\Sclad\bin\Debug\net7.0-windows\Mono.TextTemplating.dll
+C:\Users\shiich\Desktop\projects\Sclad\obj\Debug\net7.0-windows\View\AddToStock.g.cs
+C:\Users\shiich\Desktop\projects\Sclad\obj\Debug\net7.0-windows\View\AddToUsed.g.cs
+C:\Users\shiich\Desktop\projects\Sclad\obj\Debug\net7.0-windows\View\AddToStock.baml
+C:\Users\shiich\Desktop\projects\Sclad\obj\Debug\net7.0-windows\View\AddToUsed.baml

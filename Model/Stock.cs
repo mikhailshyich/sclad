@@ -1,4 +1,6 @@
-﻿namespace Sclad.Model
+﻿using System.Collections.Generic;
+
+namespace Sclad.Model
 {
     public class Stock
     {
@@ -6,5 +8,6 @@
         public string Title { get; set; }
         public int Count { get; set; }
         public decimal Price { get; set; }
+        public List<Goods> Goods { get; set; }
     }
 }

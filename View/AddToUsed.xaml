@@ -15,11 +15,12 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Width="200">
+            <TextBlock Text="Выберите дату"/>
             <DatePicker></DatePicker>
             <TextBlock Text="Наименование товара" HorizontalAlignment="Center"/>
             <ComboBox/>
             <TextBlock Text="Количество" HorizontalAlignment="Center"/>
-            <TextBox Name="" Text=""/>
+            <TextBox Name="sda" Text=""/>
             <TextBlock Text="Стоимость" HorizontalAlignment="Center"/>
             <TextBox Name="asd" Text=""/>
         </StackPanel>

@@ -9,7 +9,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using Sclad;
 using Sclad.View;
 using System;
 using System.Diagnostics;

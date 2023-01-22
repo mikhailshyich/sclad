@@ -18,7 +18,7 @@
             <TextBlock Text="Наименование товара" HorizontalAlignment="Center"/>
             <ComboBox Text="Наименование"/>
             <TextBlock Text="Количество" HorizontalAlignment="Center"/>
-            <TextBox Name="" Text=""/>
+            <TextBox Name="dsa" Text=""/>
             <TextBlock Text="Стоимость" HorizontalAlignment="Center"/>
             <TextBox Name="asd" Text=""/>
         </StackPanel>
